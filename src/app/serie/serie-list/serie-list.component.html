@@ -1,0 +1,49 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Collection</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of series">
+      <th scope="row">{{ item.id }}</th>
+      <td> <a href="#" (click)="Model(item.image, item.description)"> {{item.name}} </a> </td>
+      <td>{{ item.collection }}</td>
+      <td>{{ item.price }} </td>
+      {{CountSeasons(item.price)}}
+    </tr>
+  </tbody>
+</table>
+
+ <a>Average price: {{Co_seasons/item}}</a>
+
+<!-- Button trigger modal -->
+<button id="btnModal" type="button" class="btn btn-primary invisible" data-bs-toggle="modal" data-bs-target="#exampleModal">
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+       </div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="card p-2" >
+          <img
+            class="card-img-top"
+            src="{{ image }}"
+          />
+        <h5> description </h5>
+        <p>{{descrip}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
